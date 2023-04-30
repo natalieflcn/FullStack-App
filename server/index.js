@@ -10,6 +10,7 @@ const app = express();
 
 const db = require('./queries');
 
+//host react app as static files
 app.use(express.static(path.resolve(__dirname, '../favlinks/build')))
 
 app.use(bodyParser.json())
@@ -27,9 +28,13 @@ app.get('/', (req, res) => {
 app.get('/links', db.getLinks)
 
 //should retrieve a link by ID
-app.get('/links/:id', (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../favlinks/build", "index.html"))
-})
+app.get('/links/:id', db.getLink)
+
+app.post('/links', db.createLink)
+
+app.put('links/:id', db.updateLink)
+
+app.delete('/links/:id', db.deleteLink)
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
