@@ -40,7 +40,7 @@ const createLink = (req, res) => {
         if(error){
             throw error
         }
-        response.status(201).send(`Link added with ID: ${results.rows[0].id}`)
+        res.status(201).send(`Link added with ID: ${results.rows[0].id}`)
     })
  }
 

@@ -38,6 +38,7 @@ const Table = ({ props }) => {
       <table>   
         <TableHeader/>
         <TableBody props={props}/>
+
       </table>
     )
   }
