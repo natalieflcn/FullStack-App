@@ -1,5 +1,5 @@
 //queries.js code
-require('dotenv').config()
+//require('dotenv').config()
 
 const POOL = require('pg').Pool
 
@@ -38,13 +38,7 @@ const createLink = (req, res) => {
     const name = req.body.name
     const URL = req.body.URL
 
-    if (name && URL) {
-        pool.query(
-
-        )
-    } else {
-        response.status(403).send("Server is expecting a data object with name and URL parameters")
-    }
+    
 
 
 

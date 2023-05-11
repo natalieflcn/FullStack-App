@@ -30,12 +30,12 @@ app.get('/', (req, res) => {
 })
 
 //should return the links stored on your postgres database
-app.get('/new', db.getLinks)
+app.get('/links', db.getLinks)
 
 //should retrieve a link by ID
 app.get('/links/:id', db.getLink)
 
-app.post('/links', db.createLink)
+app.post('/new', db.createLink)
 
 app.put('links/:id', db.updateLink)
 
